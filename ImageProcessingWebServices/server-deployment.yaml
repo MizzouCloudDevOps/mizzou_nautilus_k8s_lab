@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-processing
+  labels: 
+    app: imageProcessing
+    tier: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: imageProcessing
+      tier: server
+  template:
+    metadata:
+      labels:
+        app: imageProcessing
+        tier: server
+    spec:
+      containers:
+      - name: imgproc-server
+        image: wangso/imgproc-server:nautilus
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: 2000Mi
+            cpu: 2
+          requests:
+            memory: 1000Mi
+            cpu: 1
+        ports:
+          - containerPort: 5000
+        volumeMounts:
+        - mountPath: /ImageProcessingWebServices/output/server
+          name: mizzoucerivolume
+      volumes:
+      - name: mizzoucerivolume
+        persistentVolumeClaim:
+          claimName: mizzoucerivolume          
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-service
+spec:
+  type: ClusterIP
+  selector:
+    app: imageProcessing
+    tier: server
+  ports:
+  - name: http
+    port: 5000
+    targetPort: 5000
+    protocol: TCP
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.tls: ""
+  name: server-ingress
+spec:
+  rules:
+  - host: wangso-server.nautilus.optiputer.net
+    http:
+      paths:
+      - backend:
+          serviceName: server-service
+          servicePort: 5000
+        path: /
+
+
+
+
+
+
+
+
+
+
+
+
