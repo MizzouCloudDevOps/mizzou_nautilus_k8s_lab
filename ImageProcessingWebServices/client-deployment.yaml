@@ -18,6 +18,9 @@ spec:
             - name: imgproc-client
               image: wangso/imgproc-client:V1
               imagePullPolicy: Always
+              env:
+                - name: server
+                  value: "Your_Server_Ingress_Name"	
               resources:
                 limits:
                   memory: 2000Mi
