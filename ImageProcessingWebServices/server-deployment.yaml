@@ -32,9 +32,9 @@ spec:
           - containerPort: 5000
         volumeMounts:
         - mountPath: /ImageProcessingWebServices/output/server
-          name: mizzoucerivolume
+          name: yourvolume
       volumes:
-      - name: mizzoucerivolume
+      - name: yourvolume
         persistentVolumeClaim:
           claimName: mizzoucerivolume          
       restartPolicy: Always
