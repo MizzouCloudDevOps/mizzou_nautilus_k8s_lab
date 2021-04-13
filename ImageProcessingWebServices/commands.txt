@@ -1,3 +1,3 @@
-curl -X POST -H 'Content-Type: application/json' http://Your_Server_Ingress_Address/setNextServer -d '{"server":"Your_Server_Ingress_Address"}'
+curl -X POST -H 'Content-Type: application/json' https://Your_Server_Ingress_Address/setNextServer -d '{"server":"Your_Server_Ingress_Address"}'
 
-e.g. curl -X POST -H 'Content-Type: application/json' http://wangso-server.nautilus.optiputer.net/setNextServer -d '{"server":"wangso-server.nautilus.optiputer.net/setNextServer"}'
+e.g. curl -X POST -H 'Content-Type: application/json' https://wangso-server.nautilus.optiputer.net/setNextServer -d '{"server":"wangso-server.nautilus.optiputer.net"}'
