@@ -72,7 +72,8 @@ spec:
         backend: 
           service: 
             name: server-service
-            port: 5000
+            port: 
+              number: 5000
 
 
 
