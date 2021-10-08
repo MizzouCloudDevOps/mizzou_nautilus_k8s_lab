@@ -37,7 +37,7 @@ spec:
       volumes:
       - name: yourvolume
         persistentVolumeClaim:
-          claimName: mizzoucerivolume          
+          claimName: Your-Unique-Volume-Name          
       restartPolicy: Always
 ---
 apiVersion: v1
@@ -55,7 +55,7 @@ spec:
     targetPort: 5000
     protocol: TCP
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
@@ -64,13 +64,15 @@ metadata:
   name: server-ingress
 spec:
   rules:
-  - host: wangso-server.nautilus.optiputer.net
+  - host: Your-Unique-Host-Name.nautilus.optiputer.net
     http:
       paths:
-      - backend:
-          serviceName: server-service
-          servicePort: 5000
-        path: /
+      - path: /
+        pathType: Prefix
+        backend: 
+          service: 
+            name: server-service
+            port: 5000
 
 
 
