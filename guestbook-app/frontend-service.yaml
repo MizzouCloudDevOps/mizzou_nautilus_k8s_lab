@@ -15,7 +15,3 @@ spec:
     port: 80
     targetPort: 80
     protocol: TCP
-  selector:
-    app.kubernetes.io/name: guestbook
-    app.kubernetes.io/component: frontend
-
