@@ -30,11 +30,11 @@ spec:
                   cpu: 1
               volumeMounts:
               - mountPath: /ImageProcessingWebServices/output/client
-                name: yourvolume
+                name: myvolume
             volumes:
-            - name: yourvolume
+            - name: myvolume
               persistentVolumeClaim:
-                claimName: mizzoucerivolume  
+                claimName: Your-Unique-Volume-Name  
             restartPolicy: Always
 
       

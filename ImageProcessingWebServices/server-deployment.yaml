@@ -33,9 +33,9 @@ spec:
           - containerPort: 5000
         volumeMounts:
         - mountPath: /ImageProcessingWebServices/output/server
-          name: yourvolume
+          name: myvolume
       volumes:
-      - name: yourvolume
+      - name: myvolume
         persistentVolumeClaim:
           claimName: Your-Unique-Volume-Name          
       restartPolicy: Always
