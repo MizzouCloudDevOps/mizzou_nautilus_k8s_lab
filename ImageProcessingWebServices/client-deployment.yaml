@@ -20,7 +20,7 @@ spec:
               imagePullPolicy: Always
               env:
                 - name: server
-                  value: wangso-server.nautilus.optiputer.net	
+                  value: Your-Unique-Host-Name.nautilus.optiputer.net
               resources:
                 limits:
                   memory: 2000Mi
