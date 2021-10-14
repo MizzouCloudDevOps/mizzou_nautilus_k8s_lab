@@ -21,6 +21,9 @@ spec:
       - name: imgproc-server
         image: wangso/imgproc-server:V1
         imagePullPolicy: Always
+        env:
+          - name: server
+            value: Your-Unique-Host-Name.nautilus.optiputer.net
         resources:
           limits:
             nvidia.com/gpu: 1 
