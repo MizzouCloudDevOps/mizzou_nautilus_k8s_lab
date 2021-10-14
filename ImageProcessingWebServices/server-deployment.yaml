@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: image-processing
+  name: imgproc-server
   labels: 
     app: imageProcessing
     tier: server
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: imgproc-server
-        image: wangso/imgproc-server:V2
+        image: wangso/imgproc-server:V1
         imagePullPolicy: Always
         env:
           - name: server
