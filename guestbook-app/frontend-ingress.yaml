@@ -10,10 +10,10 @@ spec:
   - host: Your-Unique-Host-Name.nautilus.optiputer.net
     http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
+      - backend:
           service:
             name: frontend-service
             port:
               number: 80
+        path: /
+        pathType: ImplementationSpecific

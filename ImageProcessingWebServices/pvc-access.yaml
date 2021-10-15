@@ -10,7 +10,6 @@ spec:
     args: ["mkdir /data; sleep 1000"]
     imagePullPolicy: Always
     resources:
-      limits:
         limits:
           memory: 200Mi
           cpu: 2
