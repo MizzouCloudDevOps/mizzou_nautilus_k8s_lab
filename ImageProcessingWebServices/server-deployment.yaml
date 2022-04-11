@@ -39,7 +39,7 @@ spec:
       volumes:
       - name: myvolume
         persistentVolumeClaim:
-          claimName: Your-Unique-Volume-Name          
+          claimName: Your-Unique-Volume-Name
       restartPolicy: Always
 ---
 apiVersion: v1
