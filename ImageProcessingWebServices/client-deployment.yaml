@@ -20,7 +20,7 @@ spec:
               imagePullPolicy: Always
               env:
                 - name: server
-                  value: Your-Unique-Host-Name.nautilus.optiputer.net
+                  value: Your-Unique-Host-Name.nrp-nautilus.io
               resources:
                 limits:
                   memory: 2000Mi
@@ -34,7 +34,7 @@ spec:
             volumes:
             - name: myvolume
               persistentVolumeClaim:
-                claimName: Your-Unique-Volume-Name  
+                claimName: Your-Unique-Volume-Name
             restartPolicy: Always
 
       
