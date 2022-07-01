@@ -16,7 +16,7 @@ spec:
         spec:          
             containers:
             - name: imgproc-client
-              image: wangso/imgproc-client:V1
+              image: wangso/imgproc-client:V2
               imagePullPolicy: Always
               env:
                 - name: server
